@@ -5,20 +5,19 @@
 void main(){
 	
 	int i = 0, tam = 0, menor, maior;
-;
 	int sel;
 	int VarLoop = 1;
 	char operar();
     char op;	
     char continuar = 's';
-do{
+
     while (VarLoop == 1){
 	
 		printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
 		printf("             FORMULA 1 \n");
 		printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
 		printf("         faça seu cadastro. \n");
-        printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n \t");
+        printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
 	
 	struct Piloto{
 		int age;
@@ -36,7 +35,28 @@ do{
         char tamc[50];	    
 	
 	
-};	struct Piloto plto[TAMAMANHO];
+};
+//------------------------------------------------------------------------------------------------------------
+    
+	do{
+	    printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
+		printf("               FORMULA 1 \n");
+		printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
+		printf("(1)cadastro \n");
+		printf("(2)Consulta Pilotos, Circuitos e Voltas \n");
+		printf("(3)Pesquisar os pilotos registrados. \n");
+		printf("(4)Relacionar todos os pilotos que realizaram voltas em um circuito \n");
+		printf("(5)Pesquisar todos os pilotos, equipes e circuitos que realizaram um \n tempo de volta menor ou igual ao fornecido pelo usuário (minutos, segundos \n e milissegundos). \n");
+		printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n \t");
+		
+		printf("o que quer fazer?: \n");
+		scanf("%d%*c",&sel);
+		
+		switch (sel){
+			case 1:
+			system("cls");
+			
+			struct Piloto plto[TAMAMANHO];
  
 	for(i=0;i<TAMAMANHO;i++){
  
@@ -80,43 +100,36 @@ do{
 		printf("Informe menor tempo  %do piloto no circuito Min,Seg,Milisegundos: \n",i+1);
 		scanf("%.8f",&plto[i].temp);
 }
-//------------------------------------------------------------------------------------------------------------
-        printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
-		printf("               FORMULA 1 \n");
-		printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n");
-		printf("(1)Consulta Pilotos, Circuitos e Voltas \n");
-		printf("(2)Pesquisar os pilotos registrados. \n");
-		printf("(3)Relacionar todos os pilotos que realizaram voltas em um circuito \n");
-		printf("(4)Pesquisar todos os pilotos, equipes e circuitos que realizaram um \n tempo de volta menor ou igual ao fornecido pelo usuário (minutos, segundos \n e milissegundos). \n");
-		printf("~*~~*~~*~~*~*~~*~*~~*~~*~~*~*~~*~*~~*~ \n \t");
-		
-		printf("o que quer fazer?: \n");
-		scanf("%d%*c",&sel);
-		
-		switch (sel){
-			case 1:
+				break;
+			
+			
+			case 2:
+			system("cls");
 					for(i=0;i<TAMAMANHO;i++){
 		printf("Nome: %[^\n]s \n",plto[i].plt);
 		printf("volta: %8.f \n",plto[i].temp);
 		printf("circuito: %[^\n]s \n",plto[i].rc);
 		}
 		    break;
-			case 2:
-						printf("qual piloto quer verificar registro?: %[^\n]s \n",plto[i].plt);
+			case 3:
+				system("cls");
+						printf("qual piloto quer verificar registro?: \n",plto[i].plt);
 		scanf("%[^\n]s",&plto[i].plt);
  if(plto[i].plt != 0){
  printf("piloto %[^\n]s encontrado \n",plto[i].plt);
  }else { printf("piloto não registrado");
  }
 				break;
-			case 3:
+			case 4:
+				system("cls");
 		printf("circuito: %s \n",plto[i].rc);
 		scanf("%[^\n]s",&plto[i].rc);
 			for(i=0;i<TAMAMANHO;i++){
 		printf("pilotos: %[^\n]s \n", plto[i].plt, plto[i].rc);
 }
 				break;
-			case 4:	
+			case 5:
+			system("cls");
 			tam = i;
 for(i=0;i<tam;i++){
  
@@ -143,10 +156,11 @@ for(i=0;i<tam;i++){
 		
 		printf("\n ...ENTER para continuar... \n");
 		getchar();
-}
+
+
 printf("Deseja continuar (s/n)?");
 		scanf(" %c",&continuar);	
 	}while(i<10 && continuar=='s');
-	
+}
 return 0;
 }
